@@ -38,7 +38,7 @@ MUSIC_INFORM_AVAILABILITY = (
     "This bot only serves the specified group and"
     "its members in private chat"
 )
-MUSIC_MAX_LENGTH = 10800
+MUSIC_MAX_LENGTH = 90800
 
 """
 import os
@@ -51,7 +51,7 @@ from youtube_dl import YoutubeDL
 from PIL import Image
 import ffmpeg
 
-MUSIC_MAX_LENGTH = 10800
+MUSIC_MAX_LENGTH = 90800
 DELAY_DELETE_INFORM = 10
 TG_THUMB_MAX_LENGTH = 320
 REGEX_SITES = (
@@ -98,7 +98,7 @@ main_filter = (
 
 @app.on_message(main_filter & filters.regex("^/ping$"))
 async def ping_pong(_, message):
-    await _reply_and_delete_later(message, "pong",
+    await _reply_and_delete_later(message, "Pong fiatoooo 👻",
                                   DELAY_DELETE_INFORM)
 
 
@@ -122,7 +122,7 @@ async def _fetch_and_send_music(message: Message):
         # send a link as a reply to bypass Music category check
         if not message.reply_to_message \
                 and _youtube_video_not_music(info_dict):
-            inform = ("This video is not under Music category, "
+            inform = ("Esse vídeo aí, não é uma categoria de música, "
                       "you can resend the link as a reply "
                       "to force download it")
             await _reply_and_delete_later(message, inform,
@@ -130,13 +130,13 @@ async def _fetch_and_send_music(message: Message):
             return
         if info_dict['duration'] > MUSIC_MAX_LENGTH:
             readable_max_length = str(timedelta(seconds=MUSIC_MAX_LENGTH))
-            inform = ("This won't be downloaded because its audio length is "
-                      "longer than the limit `{}` which is set by the bot"
+            inform = ("Não foi possível baixar essa música "
+                      "É longo, o limite é `{}` enfim, que azar "
                       .format(readable_max_length))
             await _reply_and_delete_later(message, inform,
                                           DELAY_DELETE_INFORM)
             return
-        d_status = await message.reply_text("Downloading...", quote=True,
+        d_status = await message.reply_text("Estou baixando, aguarde...", quote=True,
                                             disable_notification=True)
         ydl.process_info(info_dict)
         audio_file = ydl.prepare_filename(info_dict)
