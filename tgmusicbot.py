@@ -98,7 +98,7 @@ main_filter = (
 
 @app.on_message(main_filter & filters.regex("^/ping$"))
 async def ping_pong(_, message):
-    await _reply_and_delete_later(message, "Pong fiatoooo 👻",
+    await _reply_and_delete_later(message, "Pong fiatoooo baianor 👻",
                                   DELAY_DELETE_INFORM)
 
 
@@ -122,9 +122,9 @@ async def _fetch_and_send_music(message: Message):
         # send a link as a reply to bypass Music category check
         if not message.reply_to_message \
                 and _youtube_video_not_music(info_dict):
-            inform = ("Esse vídeo aí, não é uma categoria de música, "
-                      "you can resend the link as a reply "
-                      "to force download it")
+            inform = ("Esse vídeo aí, não é uma categoria de música bro, "
+                      " 😐 Essa merda de link, é igual uma cacetada de puiça, que se fouda 😕 Vai se fuder baianor "
+                      "Enfim, tente novamente.")
             await _reply_and_delete_later(message, inform,
                                           DELAY_DELETE_INFORM)
             return
