@@ -38,7 +38,7 @@ MUSIC_INFORM_AVAILABILITY = (
     "This bot only serves the specified group and"
     "its members in private chat"
 )
-MUSIC_MAX_LENGTH = 20800
+MUSIC_MAX_LENGTH = 90800
 
 """
 import os
@@ -51,7 +51,7 @@ from yt_dlp import YoutubeDL
 from PIL import Image
 import ffmpeg
 
-MUSIC_MAX_LENGTH = 20800
+MUSIC_MAX_LENGTH = 90800
 DELAY_DELETE_INFORM = 10
 TG_THUMB_MAX_LENGTH = 320
 REGEX_SITES = (
