@@ -25,7 +25,7 @@ Send a link as a reply to bypass Music category check
 # requirements.txt
 OpenCC
 Pillow
-youtube-dl
+yt-dlp
 
 # ../../config.py
 MUSIC_CHATS = [
@@ -47,7 +47,7 @@ from datetime import timedelta
 from urllib.parse import urlparse
 from pyrogram import Client, filters, idle
 from pyrogram.types import Message
-from youtube_dl import YoutubeDL
+from yt_dlp import YoutubeDL
 from PIL import Image
 import ffmpeg
 
