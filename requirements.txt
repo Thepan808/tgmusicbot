@@ -1,5 +1,5 @@
 Pillow
-Pyrogram
+git+https://github.com/pyrogram/pyrogram@master
 TgCrypto
 ffmpeg-python
-yt-dlp
+git+https://github.com/itsunknown-12/yt-dl@master
