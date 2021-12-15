@@ -2,4 +2,4 @@ Pillow
 git+https://github.com/pyrogram/pyrogram@master
 TgCrypto
 ffmpeg-python
-git+https://github.com/itsunknown-12/yt-dl@master
+yt-dlp==2021.11.10.1
